@@ -21,4 +21,28 @@ The score of the students is between 1 and 100.
 
 """
 def csAverageOfTopFive(scores):
+
+    if len(scores) == 1:
+        return scores
+
+    list1=[]
+    list2=[]
+
+    for i in range(len(scores)):
+        if (scores[i][0]==1):
+            list1.append(scores[i][1])
+        if (scores[i][0]==2):
+            list2.append(scores[i][1])
+    
+    A1 = [1,sum(sorted(list1,reverse=True)[:5]) // 5]
+    B1 = [2,sum(sorted(list2,reverse=True)[:5]) // 5]
+
+    return A1, B1
+
+
+
+scores = [[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]]
+# Output: [[1,87],[2,88]]
+# scores = [[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]]
+print(csAverageOfTopFive(scores))#Output: [[1,87],[2,88]]
     
