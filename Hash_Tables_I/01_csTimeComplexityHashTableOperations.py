@@ -13,6 +13,6 @@ D. O(n)
 
 
 answer is:
-
+O(1)
 
 """

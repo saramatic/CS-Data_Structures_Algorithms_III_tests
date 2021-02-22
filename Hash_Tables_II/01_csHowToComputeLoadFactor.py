@@ -13,6 +13,6 @@ D. Multiply the total number of slots in the hash table by 2. Take that result a
 
 Answer is:
 
-
+ The number of items stored in a hash table divided by the total number of slots
 
 """
