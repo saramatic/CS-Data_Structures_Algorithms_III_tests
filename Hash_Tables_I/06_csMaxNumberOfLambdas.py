@@ -27,31 +27,36 @@ text consists of lowercase English characters only
 
 [output] integer
 """
+# def csMaxNumberOfLambdas(text):
+#     # set a list like a stack
+#     lamb = list("lambda")
+#     # set a counter
+#     counter = 0
+    
+#     # loop thru the lambda
+#     for i in range(len(lamb)):
+#         # popping off each letter
+#         letter = lamb.pop()
+#         # counter the number of letters of lambda in text
+#         counter += text.count(letter)
+#     # return number of full lambdas    
+#     return counter // 6
+
+
+# # Example 1:
+# text1 = "mbxcdatlas"
+# print(csMaxNumberOfLambdas(text1))# Output: 1
+
+# # Example 2:
+# text2 = "lalaaxcmbdtsumbdav"
+# print(csMaxNumberOfLambdas(text2))# Output: 2
+
+# # Example 3:
+# text3 = "sctlamb"
+# print(csMaxNumberOfLambdas(text3))# Output: 0
+    
 def csMaxNumberOfLambdas(text):
-    # set a list like a stack
-    lamb = list("lambda")
-    # set a counter
-    counter = 0
-    
-    # loop thru the lambda
-    for i in range(len(lamb)):
-        # popping off each letter
-        letter = lamb.pop()
-        # counter the number of letters of lambda in text
-        counter += text.count(letter)
-    # return number of full lambdas    
-    return counter // 6
-
-
-# Example 1:
-text1 = "mbxcdatlas"
-print(csMaxNumberOfLambdas(text1))# Output: 1
-
-# Example 2:
-text2 = "lalaaxcmbdtsumbdav"
-print(csMaxNumberOfLambdas(text2))# Output: 2
-
-# Example 3:
-text3 = "sctlamb"
-print(csMaxNumberOfLambdas(text3))# Output: 0
-    
+    hashTable = [0] * 6
+    for i,c in enumerate("lambda"):
+        hashTable[i] = text.count(c)
+    return min(hashTable)
